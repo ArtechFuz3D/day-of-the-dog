@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+---
+
+<ContentSection title="Credits" id="abouts">
+  <!-- <Icon slot="eyebrow" name="logomark" class="size-44" /> -->
+  <!-- <Fragment slot="lead">
+    It's the 
+    <span class="text-primary">Day Of The Dog.</span>
+    Avoid the infection!
+    <span class="text-primary">Only one dog can save us now!</span>
+  </Fragment> -->
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-1">
+    <a
+      href="https://artechfuz3d.itch.io"
+      class="flex items-center justify-center gap-2 border-2 border-current px-6 py-4"
+    >
+      <Icon name="mdi:telescope" class="size-8" />
+      <span>Game Dev & Audio by ArtechFuz3D</span>
+    </a>
+    <a
+      href="https://bevouliin.com/category/free_game_asset/"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon name="mdi:dog" class="size-8" />
+      <span>Art by Bevouliin</span>
+    </a>
+  </div>
+</ContentSection>

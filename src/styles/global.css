@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Bangers&family=Creepster&family=Noto+Sans+Canadian+Aboriginal:wght@100..900&family=Orbitron:wght@400..900&family=Wavefont:wght@4..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+
+}
+.game-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+}
+
+body {
+  cursor: crosshair;
+  letter-spacing: 0.2rem;
+
+}
+a,
+.btn {
+  @apply transition-colors duration-200;
+  @apply hover:text-primary;
+  @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent;
+  @apply bg-gradient-to-b from-red-600 via-orange-500 to-lime-500;
+}
+

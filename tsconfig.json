@@ -1,0 +1,26 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "strictNullChecks": false,
+    "declaration": true,
+    "lib": ["es2022", "dom", "ES6"],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "src/*", "src/game/*", "src/vfx/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  },
+  "include": ["src/**/*"]
+}

@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+---
+
+<ContentSection title="Day Of The Dog" id="intro">
+  <Icon slot="eyebrow" name="logomark" class="size-44" />
+  <Fragment slot="lead">
+    It's the 
+    <span class="text-primary">Day Of The Dog.</span>
+    Avoid the infection!
+    <span class="text-primary">Only one dog can save us now!</span>
+    <!-- This text is not AI  <span class="text-primary">generated,</span> it's faster than a <span class="text-primary">Chappa</span>, foot. -->
+  </Fragment>
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-1">
+    <a
+      href="/game"
+      class="flex items-center justify-center gap-2 border-2 border-current px-6 py-4"
+    >
+      <Icon name="mdi:dog" class="size-8" />
+      <span>Play the Game</span>
+    </a>
+    <!-- <a
+      href="https://heartofgold.artechfuz3d.xyz"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon name="mdi:telescope" class="size-8" />
+      <span>Take A Look Inside?</span>
+    </a> -->
+  </div>
+</ContentSection>

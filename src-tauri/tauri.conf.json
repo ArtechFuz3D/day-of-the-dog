@@ -1,0 +1,68 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "yarn build",
+    "beforeDevCommand": "yarn dev",
+    "devPath": "http://localhost:4321",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "Day Of The Dog",
+    "version": "0.3.1"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false
+    },
+    "bundle": {
+      "active": true,
+      "category": "Games",
+      "copyright": "ArtechFuz3D",
+      
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "xyz.artechfuz3d.day-of-the-dog",
+      "longDescription": "The World is succumbed to plague. One Dog. will save us now. There is just 1 problem The Dog is infected, and needs your help to eliminate the enemy hoard. gamer, can you?",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "shortDescription": "2D Parallax Side Scrolling Game Demo",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 850,
+        "resizable": true,
+        "title": "Day Of The Dog",
+        "width": 1250
+  
+      }
+    ]
+  }
+}

@@ -1,0 +1,180 @@
+---
+import type { NavItem } from "~/types";
+import { Icon } from "astro-icon/components";
+
+const navItems: Array<NavItem> = [
+  { title: "Restart", url: "/game" },
+  { title: "Next", url: "/gamelvl2" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <!-- <link rel="icon" href="https://artechfuz3d-studio.github.io/FreeCodeCampCourses/public/logoswirl.svg" type="image/x-icon"> -->
+    <title>Day Of The Dog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Bangers&family=Creepster&family=Noto+Sans+Canadian+Aboriginal:wght@100..900&family=Orbitron:wght@400..900&family=Wavefont:wght@4..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <!-- <link rel="stylesheet" href="src/game/day-of-the-dog/style.css" /> -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #canvas1 {
+        border: 8px solid rgb(43, 43, 43);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /* width: 100%; */
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      #playerSheet,
+      #layerOne,
+      #layerTwo,
+      #layerThree,
+      #layerFour,
+      #layerFive,
+      #enemy_fly,
+      #enemy_plant,
+      #enemy_spider_big,
+      #fireSprite,
+      #collisionAnimation,
+      #playerLife {
+        display: none;
+      }
+
+      #loading {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        font-size: 80px;
+      }
+
+      body {
+        text-align: center; /* Center the text in the body */
+        display: flex;
+        flex-direction: column;
+        overflow: hidden; /* Prevent horizontal overflow */
+        box-sizing: border-box;
+      }
+
+      #navheader {
+        position: sticky;
+        bottom: 0;
+        left: auto;
+        display: flex;
+        justify-content: center;
+        padding-top: 0.3em;
+        font-size: 1.5em;
+      }
+
+      #nav-menu {
+        display: flex; /* Display the ul as flex */
+        justify-content: center; /* Center the ul items horizontally */
+        list-style: none; /* Remove default list styling */
+        padding: 0;
+        margin: 0;
+      }
+
+      #nav-menu li {
+        margin: 0 1em; /* Add some space between the list items */
+      }
+
+      #nav-menu a {
+        text-decoration: none; /* Remove underline from links */
+        color: inherit; /* Inherit color from parent */
+      }
+
+      h1 {
+        color: #ffffff;
+        font-size: 2em;
+      }
+
+      h2 {
+        color: #ffffff;
+        font-size: 1.6em;
+      }
+
+      p {
+        color: #ffffff;
+        font-size: 1em;
+      }
+
+      nav a:hover {
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- App Overlay -->
+    <header id="navheader">
+      <nav>
+        <div class="z-50 flex items-center gap-6">
+          <nav class="hidden sm:block">
+            <ul class="flex items-center gap-6">
+              {
+                navItems.map(({ title, url }) => (
+                  <li>
+                    <a class="text-lg/normal" href={url}>
+                      {title}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+          <button
+            id="open-nav-button"
+            type="button"
+            class="btn sm:hidden"
+            aria-label="Navigation"
+          >
+            <Icon name="mdi:menu" class="size-8" />
+          </button>
+        </div>
+        <!-- <div class="burger-icon" id="burger-icon">&#9776;</div> -->
+        <ul id="nav-menu">
+          <!-- <li><a href="../index.html">Home</a></li>
+          <li><a href="../">Back</a></li> -->
+          <!-- <li><a href="game">Restart</a></li>
+          <li><a href="gamelvl2">Next Level</a></li> -->
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Game -->
+    <canvas id="canvas1"></canvas>
+    <img id="playerSheet" src="/player_1.png" />
+    <img id="layerOne" src="/layer-1f.png" />
+    <img id="layerTwo" src="/layer-2f.png" />
+    <img id="layerThree" src="/layer-3f.png" />
+    <img id="layerFour" src="/layer-4f.png" />
+    <img id="layerFive" src="/layer-5f.png" />
+    <img id="enemy_fly" src="/enemy_fly.png" />
+    <img id="enemy_plant" src="/enemy_plant.png" />
+    <img id="enemy_spider_big" src="/enemy_spider_big.png" />
+    <img id="fireSprite" src="/fire.png" />
+    <img id="collisionAnimation" src="/boom1.png" />
+    <img id="playerLife" src="/lives.png" />
+    <h1 id="loading">LOADING...</h1>
+    <!-- Game UI -->
+
+    <script src="src/game/day-of-the-dog/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+---
+
+<script is:inline>
+  function startGame() {
+    // console.log("startGame function called");
+    const splashElement = document.getElementById("game-splash");
+    const gameContainer = document.getElementById("game-container");
+
+    // console.log("Initial display of game-splash:", splashElement.style.display);
+    // console.log("Initial display of game-container:", gameContainer.style.display);
+
+    splashElement.style.display = "none";
+    gameContainer.style.display = "block";
+
+    // console.log("Updated display of game-splash:", splashElement.style.display);
+    // console.log("Updated display of game-container:", gameContainer.style.display);
+  }
+</script>
+<ContentSection title="Day Of The Dog" id="game-splash">
+  <Icon slot="eyebrow" name="logomark" class="size-44" />
+  <Fragment slot="lead">
+    The World is succumbed to plague.
+    <span class="text-primary">One Dog</span>. will save us now.
+    <span class="text-primary">There is just 1 problem</span>
+    The Dog is <span class="text-primary"> infected, </span> and needs <span
+      class="text-primary">your</span
+    > help to eliminate the <span class="text-primary">enemy hoard.</span>
+    gamer, <span class="text-primary">can you?</span>
+  </Fragment>
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-1">
+    <a
+      onclick="startGame()"
+      class="flex items-center justify-center gap-2 border-2 border-current px-6 py-4"
+    >
+      <Icon name="mdi:dog" class="size-8" />
+      <span>Play The Game</span>
+    </a>
+
+  </div>
+</ContentSection>

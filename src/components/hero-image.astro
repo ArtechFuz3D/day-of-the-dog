@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+// import moonImage from "~/assets/moon.jpg";
+import iconImage from "~/assets/app-icon.png";
+
+const widths = [450, 800, 1200];
+const sizes = "100vw";
+---
+
+<Image
+  class="h-full w-full object-cover"
+  src={iconImage}
+  widths={widths}
+  sizes={sizes}
+  alt="moon"
+/>
