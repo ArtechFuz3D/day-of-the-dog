@@ -27,7 +27,7 @@
     "rimraf": "^5.0.5",
     "tailwindcss-fluid-type": "^2.0.6",
     "typescript": "^5.4.3",
-    "vite": "^4.5.3"
+    "vite": "^4.5.6"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.0",
